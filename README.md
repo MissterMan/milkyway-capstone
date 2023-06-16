@@ -37,7 +37,9 @@ In this project there is one main contributors who are also students from the le
 ## How to use our project
 
 #### Clone this repo
-```https://github.com/MissterMan/milkyway-capstone.git```
+```
+https://github.com/MissterMan/milkyway-capstone.git
+```
 
 #### Mobile Development
 
