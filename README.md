@@ -1,8 +1,5 @@
 
 ![logo](https://github.com/MissterMan/milkyway-capstone/blob/main/assets/logo.png)
-<h2>An application to waste classification to capstone project Bangkit 2023</h2>
-<h1></h1>
-<p>Hi. this is our repository for our project in capstone project Bangkit 2023. Our team consist of 6 people from Machine Learning Path, Mobile Development Path and Cloud Computing Path.
 
 All of the project management we take a place with Github repository, to distinguish each path we create a different repository.</p>
 
@@ -17,91 +14,83 @@ All of the project management we take a place with Github repository, to disting
 
 
 ## Simple Description About Our Project
-### Machine Learning
-In this project we created a machine learning that is used to detect a waste and classify the waste into several classifications including 
-- cardboard
-- metal
-- glass
-- plastic
-- paper 
-Then we also give some decisions for the results by showing the accuracy of the predictions.
+#### Machine Learning
+Generating dummy data, building a recommendation system with content-based filtering using the TensorFlow library and Flask as the framework, and then performing preprocessing with feature scaling
 
-### Mobile Development 
-In this project, mobile development using Kotlin to develop all in the application. In this project there are one main contributors who are also students from the learning path mobile development. below is a main features of our application:
+#### Mobile Development
+Deployment a mobile application with kotlin and android studio IDE that uses a RESTful API to get and post data and firebase auth to login and register. The application UI created in Figma. The application integrated into a cloud-based system and created a seamless and intuitive user experience, it will be implemented based on user flows.
+
+#### Cloud Computing
+Provisioning IT Infrastructure in Google Cloud Platform using Compute Engine, doing RESTful API research, developing RESTful API service,  and doing the testing. Deploying the service as a container in the Compute Engine using docker.
+
+## Features
+In this project there is one main contributors who are also students from the learning path mobile development.
 - Login & Registration User
-- Edit Member Address and Integrate With Google Maps SDK
-- Image classification trash with camera
-- Transaction & History Transaction
+- Breast Milk Request Using Match Making
+- Breast Milk Donation
+- Baby Care Information
 
-### Cloud Computing
-Cloud Computing in here as backend services to connect from machine learning model and mobile development with android platform, below is the infrastructure of cloud computing:
-- Google Cloud Platform
-- ExpressJS
-- App Engine
-- Cloud Run
-- Cloud Storage
-- Cloud SQL
+## How to use our project
 
+#### Clone this repo
+```https://github.com/MissterMan/milkyway-capstone.git```
 
-## Tech stack
-![Machine Learning Infrastructure](https://raw.githubusercontent.com/Bangkit-Capstone-C22-PS085/kalpataru-waste-classification/master/assets/infrastructure.png)
-![Mobile Development Infrastructure](https://raw.githubusercontent.com/Bangkit-Capstone-C22-PS085/.github/main/MD.png)
-![Cloud Computing Infrastructure](https://raw.githubusercontent.com/Bangkit-Capstone-C22-PS085/.github/main/CC.png)
+#### Mobile Development
 
+* Clone this repo.
 
-## Our Import Library on Project
-For development you must install several import in your local computer (on Jupyter Notebook) or you can run on Google Colaboratory:
-```text
-flask==2.1.2
-matplotlib==3.4.3
-tensorflow==2.8.0
-numpy==1.22.3
-Pillow==9.0.1
-protobuf<=3.20.0
-gunicorn==20.1.0
-```
-For development in Android Studio you need environment in this below:
-```
-Android
-Kotlin Prgramming Language
-Android Maps SDK
-MVVM Architecture
-```
+  ```
+  git clone https://github.com/bahrulajisantoso/MilkyWay.git
+  ```
+* Open in Android Studio
+* Connect your device into Android Studio.
 
-For development in Backend and prepare API consume you need environment in this below:
-```
-Google Cloud Platform
-ExpressJS
-App Engine
-Cloud Run
-Cloud Storage
-Cloud SQL
-```
+  ```
+  https://developer.android.com/codelabs/basic-android-kotlin-compose-connect-device?hl=id#0
+  ```
+* Run in your Android Studio.
 
-For using our project you must clone clone, this below the link:
-<br>
+  ```
+  https://developer.android.com/training/basics/firstapp/running-app?hl=id
+  ```
 
-```bash
-# cloning project Machine Learning
-$ git clone https://github.com/Bangkit-Capstone-C22-PS085/kalpataru-waste-classification.git
-# cloning project Mobile Development
-$ git clone https://github.com/Bangkit-Capstone-C22-PS085/Kalpataru-Mobile.git
-# cloning project Cloud Computing
-$ git clone https://github.com/Bangkit-Capstone-C22-PS085/backend-cc.git
+#### Machine Learning Model
+``` bash
+# cloning main repo
+$ git clone https://github.com/MissterMan/milkyway-capstone.git
 
-# build docker image
-$ cd kalpataru-waste-classification
-$ cd api-services-model
-$ docker build -t waste-predict-api .
+# change directory
+$ cd milkyway-model
+
+#build docker image
+$ docker build -t milkyway-model .
 
 # run container
-$ docker container run  -p {port host}:5000 --name api-model-trashnet
+$ docker container run -p {host port}:5000 -d --name milkyway-model
 ```
 
-after you clone you can use our machine learning project. Then you can use our main machine learning file
-`waste_classification.ipynb` our has a several model, you can choose model dependent on your need, you can check on `/api-services-model/model_ml/` `trash-classification.h5` and `trash_exception.h5`.
+#### Backend API
+``` bash
+# creating mariadb container
+$ docker run --name mariadb -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d docker.io/library/mariadb:10.3
 
-## Dataset and Additional Dataset
-Dataset : [https://github.com/garythung/trashnet](https://github.com/garythung/trashnet)
-<br>
-Additional dataset Google Drive : [https://drive.google.com/drive/folders/1d0CX9xGEwKoTrGSHxyTOcei2dbr3w3NL?usp=sharing](https://drive.google.com/drive/folders/1d0CX9xGEwKoTrGSHxyTOcei2dbr3w3NL?usp=sharing)
+# setup database
+$ docker exec -ti mariadb bash
+$ mysql -u root -p
+# create database
+$ CREATE DATABASE db_donor;
+$ exit
+$ mysql -u root -p db_donor < db_donor.sql
+
+# cloning main repo
+$ git clone https://github.com/MissterMan/milkyway-capstone.git
+
+# change directory
+$ cd milkyway-api
+
+#build docker image
+$ docker build -t milkyway-model .
+
+# run container
+$ docker container run -p {host port}:5000 -d --name milkyway-model
+```
