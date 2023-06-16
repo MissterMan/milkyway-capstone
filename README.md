@@ -1,5 +1,5 @@
 
-![logo](https://raw.githubusercontent.com/Bangkit-Capstone-C22-PS085/kalpataru-waste-classification/master/assets/logo.png)
+![logo](https://github.com/MissterMan/milkyway-capstone/blob/main/assets/logo.png)
 <h2>An application to waste classification to capstone project Bangkit 2023</h2>
 <h1></h1>
 <p>Hi. this is our repository for our project in capstone project Bangkit 2023. Our team consist of 6 people from Machine Learning Path, Mobile Development Path and Cloud Computing Path.
