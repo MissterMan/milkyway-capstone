@@ -69,18 +69,28 @@ $ docker build -t milkyway-model .
 $ docker container run -p {host port}:5000 -d --name milkyway-model
 ```
 
-#### Backend API
+#### Backend API CC
 ``` bash
+# creating docker network
+$ docker network create -d milkyway-network
+
 # creating mariadb container
 $ docker run --name mariadb -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d docker.io/library/mariadb:10.3
 
 # setup database
+# copy database
+$ docker cp db_donor.sql container_id:/donor.sql
+
+# create database
 $ docker exec -ti mariadb bash
 $ mysql -u root -p
-# create database
 $ CREATE DATABASE db_donor;
 $ exit
+# import database
 $ mysql -u root -p db_donor < db_donor.sql
+
+# connect MariaDB container to the network
+docker network connect milkyway-network mariadb
 
 # cloning main repo
 $ git clone https://github.com/MissterMan/milkyway-capstone.git
@@ -93,4 +103,7 @@ $ docker build -t milkyway-model .
 
 # run container
 $ docker container run -p {host port}:5000 -d --name milkyway-model
+
+# connect milkyway-api-service container to the network
+docker network connect milkyway-network milkyway-api-service
 ```
