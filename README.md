@@ -1,7 +1,11 @@
 
 ![logo](https://github.com/MissterMan/milkyway-capstone/blob/main/assets/logo.png)
 
-All of the project management we take a place with Github repository, to distinguish each path we create a different repository.</p>
+## Project Overview
+We offer the solution in an mobile application to help troubled mothers fulfill the need to give babies their need of breastmilk. By gathering willing mothers who are willing to be a donor of breastmilk.
+
+## Background Project
+Because there are a lot of mothers and countless babies in Indonesia who are having lack of breast milk issues, we take the initiative to help and bring donors together with recipients.
 
 ## Our Capstone Member
 |            Nama             |  Bangkit ID    |       Path         |
